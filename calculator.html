@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Calculator</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .calculator-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 400px;
+            max-width: 100%;
+        }
+        .calculator-container h1 {
+            color: #444;
+            margin-bottom: 30px;
+        }
+        .calculator-container input {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .calculator-container button {
+            width: 100%;
+            padding: 15px;
+            background-color: #00796b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .calculator-container button:hover {
+            background-color: #004d40;
+        }
+        .tips, .share, .resources {
+            margin-top: 30px;
+            text-align: left;
+        }
+        .tips ul, .share ul, .resources ul {
+            list-style: none;
+            padding: 0;
+        }
+        .tips ul li, .share ul li, .resources ul li {
+            background-color: #e0f2f1;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 8px;
+            color: #004d40;
+        }
+        .resources ul li a {
+            color: #00796b;
+            text-decoration: none;
+        }
+        .resources ul li a:hover {
+            text-decoration: underline;
+        }
+        .tips ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Carbon Footprint Calculator</h1>
+        <form id="calculator-form">
+            <input type="number" id="miles-driven" placeholder="Miles Driven per Month" required><br>
+            <input type="number" id="power-consumption" placeholder="Power Consumption per Month (kWh)" required><br>
+            <button type="button" onclick="calculateFootprint()">Calculate</button>
+        </form>
+        <p id="footprint-result"></p>
+        <div class="tips">
+            <h2>Personalized Tips</h2>
+            <div id="personalized-tips"></div>
+        </div>
+        <div class="share">
+            <h2>Share Your Results</h2>
+            <a id="share-twitter" href="" target="_blank">Share on Twitter</a>
+        </div>
+        <div class="resources">
+            <h2>Learn More</h2>
+            <ul id="resource-list">
+                <!-- Resources will be dynamically inserted here -->
+            </ul>
+        </div>
+    </div>
+    <script src="calculator.js"></script>
+</body>
+</html>
